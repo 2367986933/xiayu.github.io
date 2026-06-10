@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>刘雨新 | 摄影作品集</title>
+  <meta name="description" content="刘雨新摄影作品集，记录城市、自然与光的对话。" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06070b;
+      --bg-soft: #101219;
+      --panel: rgba(18, 22, 33, .58);
+      --panel-strong: rgba(23, 28, 42, .78);
+      --line: rgba(159, 213, 255, .22);
+      --line-hot: rgba(105, 232, 255, .54);
+      --text: #f4f7fb;
+      --muted: #a7b0c0;
+      --quiet: #687286;
+      --cyan: #6be7ff;
+      --blue: #5277ff;
+      --violet: #9d6cff;
+      --green: #72ffca;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .42);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(82, 119, 255, .28), transparent 32vw),
+        radial-gradient(circle at 82% 2%, rgba(107, 231, 255, .18), transparent 30vw),
+        radial-gradient(circle at 65% 58%, rgba(157, 108, 255, .18), transparent 34vw),
+        linear-gradient(180deg, #05060a 0%, #0b0d14 48%, #06070b 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(155, 194, 255, .11) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(155, 194, 255, .11) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -30%;
+      z-index: -2;
+      background:
+        conic-gradient(from 120deg at 50% 50%, transparent 0 18%, rgba(105, 232, 255, .16), transparent 36% 56%, rgba(157, 108, 255, .14), transparent 74% 100%);
+      filter: blur(58px);
+      animation: drift 22s linear infinite;
+      pointer-events: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: min(calc(100% - 32px), var(--max));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 12px 10px 18px;
+      border: 1px solid rgba(178, 213, 255, .18);
+      border-radius: 999px;
+      background: rgba(8, 10, 15, .62);
+      backdrop-filter: blur(24px) saturate(145%);
+      box-shadow: 0 18px 58px rgba(0, 0, 0, .35);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #fff 0 6%, transparent 7%),
+        linear-gradient(135deg, var(--cyan), var(--blue) 48%, var(--violet));
+      box-shadow: 0 0 28px rgba(107, 231, 255, .55);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #d7deec;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 116px 0 72px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 82px max(-6vw, -70px) 34px;
+      z-index: -1;
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(6, 7, 11, .94), rgba(6, 7, 11, .52) 46%, rgba(6, 7, 11, .94)),
+        linear-gradient(180deg, rgba(6, 7, 11, .15), #06070b 92%),
+        url("assets/city/city-01.jpg") center/cover;
+      opacity: .72;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 76%, transparent 100%);
+    }
+
+    .hero-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 380px);
+      gap: clamp(28px, 5vw, 68px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(107, 231, 255, .28);
+      border-radius: 999px;
+      background: rgba(13, 18, 28, .64);
+      color: #c8f7ff;
+      font-size: 12px;
+      line-height: 1;
+      backdrop-filter: blur(18px);
+    }
+
+    .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px var(--green);
+      animation: blink 1.8s ease-in-out infinite;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(46px, 8.4vw, 112px);
+      line-height: .94;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .gradient-text {
+      display: inline-block;
+      color: transparent;
+      background: linear-gradient(110deg, #fff 0%, #dff8ff 24%, var(--cyan) 46%, var(--blue) 68%, #d5c8ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 0 46px rgba(107, 231, 255, .18);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: #c6cfde;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.72;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(148, 210, 255, .24);
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      background: rgba(255, 255, 255, .06);
+      overflow: hidden;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .button.primary {
+      border: 0;
+      background: linear-gradient(100deg, #56e6ff, #5479ff 54%, #9d6cff);
+      box-shadow: 0 0 34px rgba(84, 121, 255, .44);
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      z-index: -1;
+      background: linear-gradient(100deg, transparent, rgba(107, 231, 255, .6), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(107, 231, 255, .58);
+      box-shadow: 0 0 34px rgba(107, 231, 255, .18);
+    }
+
+    .button:hover::before { opacity: 1; }
+
+    .command-panel {
+      align-self: stretch;
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid rgba(173, 215, 255, .18);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(21, 26, 39, .76), rgba(9, 12, 19, .68));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(24px) saturate(150%);
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--quiet);
+      font-size: 12px;
+    }
+
+    .dots { display: flex; gap: 7px; }
+    .dots i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .25);
+    }
+    .dots i:nth-child(1) { background: #ff6d9b; }
+    .dots i:nth-child(2) { background: #ffd166; }
+    .dots i:nth-child(3) { background: #62f7cb; }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .metric,
+    .terminal,
+    .profile-card,
+    .work-card,
+    .photo-card {
+      border: 1px solid rgba(173, 215, 255, .16);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(20px) saturate(142%);
+    }
+
+    .metric {
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .metric b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1;
+      background: linear-gradient(100deg, #fff, #91efff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .terminal {
+      padding: 15px;
+      color: #b8c7da;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .terminal strong { color: var(--cyan); font-weight: 600; }
+    .terminal em { color: #e6d9ff; font-style: normal; }
+
+    section {
+      padding: clamp(72px, 10vw, 128px) 0;
+      position: relative;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(31px, 5vw, 64px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .profile-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: 18px;
+    }
+
+    .profile-card {
+      padding: clamp(22px, 4vw, 38px);
+      background:
+        linear-gradient(135deg, rgba(107, 231, 255, .09), transparent 34%),
+        linear-gradient(180deg, rgba(22, 27, 42, .74), rgba(14, 18, 27, .56));
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card h3 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: #d7deea;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .identity-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .identity-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--radius);
+      color: #e7edf7;
+      background: rgba(255, 255, 255, .045);
+    }
+
+    .identity-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      background: var(--cyan);
+      box-shadow: 0 0 16px var(--cyan);
+    }
+
+    .contact-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      color: #e7edf7;
+    }
+
+    .contact-line span {
+      color: var(--quiet);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .work-card {
+      min-height: 360px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .24);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+
+    .work-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: var(--cover) center/cover;
+      filter: saturate(1.08) contrast(1.02);
+      transform: scale(1.02);
+      transition: transform .5s ease;
+    }
+
+    .work-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(5, 6, 10, .1), rgba(5, 6, 10, .82) 74%),
+        radial-gradient(circle at 18% 14%, rgba(107, 231, 255, .28), transparent 30%);
+    }
+
+    .work-card:hover,
+    .photo-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--line-hot);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, .34), 0 0 38px rgba(107, 231, 255, .14);
+    }
+
+    .work-card:hover::before { transform: scale(1.08); }
+
+    .work-card a {
+      display: flex;
+      height: 100%;
+      min-height: inherit;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .work-card small {
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 9px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 999px;
+      color: #c8f7ff;
+      font-size: 11px;
+      background: rgba(0, 0, 0, .28);
+    }
+
+    .work-card h3 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      line-height: 1.05;
+    }
+
+    .work-card p {
+      margin: 0;
+      color: #bcc7d6;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .gallery-section {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .gallery {
+      columns: 3 300px;
+      column-gap: 16px;
+    }
+
+    .photo-card {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 16px;
+      border: 1px solid rgba(173, 215, 255, .14);
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+      background: rgba(255, 255, 255, .04);
+      break-inside: avoid;
+    }
+
+    .photo-card.wide,
+    .photo-card.tall,
+    .photo-card.square {
+      min-height: 0;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      transition: transform .55s ease, filter .3s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.045);
+      filter: saturate(1.08);
+    }
+
+    .photo-card .caption {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0;
+      padding: 11px 12px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      color: #eef7ff;
+      font-size: 12px;
+      background: rgba(7, 9, 14, .68);
+      backdrop-filter: blur(16px);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-card .caption span:last-child {
+      color: var(--cyan);
+    }
+
+    .marquee {
+      display: flex;
+      gap: 10px;
+      padding: 18px 0;
+      overflow: hidden;
+      color: rgba(235, 244, 255, .42);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 10px;
+      animation: slide 26s linear infinite;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .035);
+      font-size: 12px;
+    }
+
+    .footer {
+      padding: 56px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 26px;
+      background: rgba(3, 4, 8, .88);
+      backdrop-filter: blur(18px);
+    }
+
+    .lightbox.active { display: grid; }
+
+    .lightbox img {
+      max-width: min(100%, 1220px);
+      max-height: 86vh;
+      object-fit: contain;
+      border: 1px solid rgba(173, 215, 255, .2);
+      border-radius: var(--radius);
+      box-shadow: 0 30px 100px rgba(0, 0, 0, .62);
+    }
+
+    .lightbox button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+      background: rgba(255, 255, 255, .08);
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes drift {
+      from { transform: rotate(0deg) translate3d(0, 0, 0); }
+      to { transform: rotate(360deg) translate3d(0, 0, 0); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: .45; transform: scale(.86); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slide {
+      to { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .profile-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .command-panel { max-width: 560px; }
+
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .gallery {
+        columns: 2 280px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        top: 10px;
+        width: calc(100% - 20px);
+        border-radius: 8px;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        max-width: 56vw;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar { display: none; }
+
+      .hero {
+        min-height: auto;
+        padding-top: 118px;
+      }
+
+      .hero::before {
+        inset: 72px -18px 18px;
+      }
+
+      .metric-grid,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-card { min-height: 300px; }
+
+      .gallery {
+        columns: 1;
+        column-gap: 0;
+      }
+
+      .photo-card {
+        margin-bottom: 12px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>刘雨新 · Vision Portfolio</span>
+    </a>
+    <div class="nav-links">
+      <a href="#profile">Profile</a>
+      <a href="#series">Series</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero shell">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="pulse"></span> AI Native Photography Workspace</div>
+          <h1><span class="gradient-text">Capturing</span><br />Cities, Nature<br />and Light.</h1>
+          <p class="hero-copy">刘雨新摄影作品集。以城市肌理、自然风光、建筑秩序与航拍视角，构建一座关于光、空间和未来感的个人视觉系统。</p>
+          <div class="actions">
+            <a class="button primary" href="#gallery">进入作品系统</a>
+            <a class="button" href="mailto:2367986933@qq.com">联系合作</a>
+          </div>
+        </div>
+
+        <aside class="command-panel reveal" aria-label="作品集数据面板">
+          <div class="panel-top">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>portfolio.engine</span>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><b>33</b><span>Selected Works</span></div>
+            <div class="metric"><b>04</b><span>Visual Systems</span></div>
+            <div class="metric"><b>AI</b><span>Visual Creator</span></div>
+            <div class="metric"><b>VCG</b><span>视觉中国签约摄影师</span></div>
+          </div>
+          <div class="terminal">
+            <div><strong>&gt;</strong> scan.light_source()</div>
+            <div><strong>&gt;</strong> align(<em>city</em>, <em>nature</em>, <em>architecture</em>)</div>
+            <div><strong>&gt;</strong> render.portfolio("future-minimal")</div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="profile" class="shell">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Photographer Profile</p>
+          <h2>把摄影当成一套视觉工作台。</h2>
+        </div>
+        <p class="section-copy">不是传统简历式陈列，而是用产品化界面呈现影像能力：观察、选择、构图、等待，以及把现实光线转译为可被记住的视觉体验。</p>
+      </div>
+
+      <div class="profile-wrap">
+        <div class="profile-card reveal">
+          <h3>刘雨新</h3>
+          <p>Capturing the dialogue between cities, nature, and light.</p>
+          <ul class="identity-list">
+            <li>视觉中国签约摄影师</li>
+            <li>湖南省高校摄影联盟成员</li>
+            <li>城市与自然风光摄影爱好者</li>
+            <li>AI视觉创作者</li>
+          </ul>
+        </div>
+
+        <div id="contact" class="profile-card contact-stack reveal">
+          <div class="contact-line"><span>Phone</span><a href="tel:13683299074">13683299074</a></div>
+          <div class="contact-line"><span>Email</span><a href="mailto:2367986933@qq.com">2367986933@qq.com</a></div>
+          <div class="contact-line"><span>Focus</span><strong>City / Nature / Light</strong></div>
+          <div class="contact-line"><span>Status</span><strong>Open for collaboration</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="shell">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Visual Series</p>
+          <h2>四个摄影模块，组成一套视觉引擎。</h2>
+        </div>
+        <p class="section-copy">每个分类都以独立气质展开：城市的能量、建筑的秩序、自然的呼吸、航拍的尺度。点击任意模块可跳转到对应作品区域。</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal" style="--cover: url('assets/city/city-02.jpg')">
+          <a href="#city"><small>06 Works</small><h3>城市风光</h3><p>夜色、天际线与流动的都市光谱。</p></a>
+        </article>
+        <article class="work-card reveal" style="--cover: url('assets/architecture/architecture-01.jpg')">
+          <a href="#architecture"><small>10 Works</small><h3>建筑摄影</h3><p>结构、线条和空间秩序的静默算法。</p></a>
+        </article>
+        <article class="work-card reveal" style="--cover: url('assets/nature/nature-06.jpg')">
+          <a href="#nature"><small>08 Works</small><h3>自然风光</h3><p>山海、天空与自然光线的低频叙事。</p></a>
+        </article>
+        <article class="work-card reveal" style="--cover: url('assets/aerial/aerial-01.jpg')">
+          <a href="#aerial"><small>09 Works</small><h3>航拍</h3><p>从空中重建地貌、城市与人的尺度。</p></a>
+        </article>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="chip">AI Native</span><span class="chip">Urban Light</span><span class="chip">Aerial Mapping</span><span class="chip">Glass Interface</span><span class="chip">Future Minimal</span><span class="chip">Visual China Photographer</span>
+        <span class="chip">AI Native</span><span class="chip">Urban Light</span><span class="chip">Aerial Mapping</span><span class="chip">Glass Interface</span><span class="chip">Future Minimal</span><span class="chip">Visual China Photographer</span>
+      </div>
+    </div>
+
+    <section id="gallery" class="shell gallery-section">
+      <div id="city" class="section-head reveal">
+        <div>
+          <p class="kicker">Series 01</p>
+          <h2>城市风光</h2>
+        </div>
+        <p class="section-copy">用大画幅的横向影像建立城市视觉中心，突出高楼、道路、夜色和灯光的秩序感。</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo-card wide reveal"><img src="assets/city/city-01.jpg" alt="城市风光作品 01" loading="lazy"><figcaption class="caption"><span>城市风光 01</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/city/city-02.jpg" alt="城市风光作品 02" loading="lazy"><figcaption class="caption"><span>城市风光 02</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/city/city-03.jpg" alt="城市风光作品 03" loading="lazy"><figcaption class="caption"><span>城市风光 03</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/city/city-04.jpg" alt="城市风光作品 04" loading="lazy"><figcaption class="caption"><span>城市风光 04</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/city/city-05.jpg" alt="城市风光作品 05" loading="lazy"><figcaption class="caption"><span>城市风光 05</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/city/city-06.jpg" alt="城市风光作品 06" loading="lazy"><figcaption class="caption"><span>城市风光 06</span><span>Open</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="architecture" class="shell gallery-section">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Series 02</p>
+          <h2>建筑摄影</h2>
+        </div>
+        <p class="section-copy">以更冷静的构图呈现建筑体块、曲线、立面和人的尺度，让空间关系成为画面的主逻辑。</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo-card wide reveal"><img src="assets/architecture/architecture-01.jpg" alt="建筑摄影作品 01" loading="lazy"><figcaption class="caption"><span>建筑摄影 01</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card tall reveal"><img src="assets/architecture/architecture-02.jpg" alt="建筑摄影作品 02" loading="lazy"><figcaption class="caption"><span>建筑摄影 02</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/architecture/architecture-03.jpg" alt="建筑摄影作品 03" loading="lazy"><figcaption class="caption"><span>建筑摄影 03</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/architecture/architecture-04.jpg" alt="建筑摄影作品 04" loading="lazy"><figcaption class="caption"><span>建筑摄影 04</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card tall reveal"><img src="assets/architecture/architecture-05.jpg" alt="建筑摄影作品 05" loading="lazy"><figcaption class="caption"><span>建筑摄影 05</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/architecture/architecture-06.jpg" alt="建筑摄影作品 06" loading="lazy"><figcaption class="caption"><span>建筑摄影 06</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/architecture/architecture-07.jpg" alt="建筑摄影作品 07" loading="lazy"><figcaption class="caption"><span>建筑摄影 07</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/architecture/architecture-08.jpg" alt="建筑摄影作品 08" loading="lazy"><figcaption class="caption"><span>建筑摄影 08</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/architecture/architecture-09.jpg" alt="建筑摄影作品 09" loading="lazy"><figcaption class="caption"><span>建筑摄影 09</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card tall reveal"><img src="assets/architecture/architecture-10.jpg" alt="建筑摄影作品 10" loading="lazy"><figcaption class="caption"><span>建筑摄影 10</span><span>Open</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="nature" class="shell gallery-section">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Series 03</p>
+          <h2>自然风光</h2>
+        </div>
+        <p class="section-copy">将自然光线作为主角，保留山水、云层和地貌的呼吸感，用安静画面平衡页面的科技感。</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo-card tall reveal"><img src="assets/nature/nature-01.jpg" alt="自然风光作品 01" loading="lazy"><figcaption class="caption"><span>自然风光 01</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/nature/nature-02.jpg" alt="自然风光作品 02" loading="lazy"><figcaption class="caption"><span>自然风光 02</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card tall reveal"><img src="assets/nature/nature-03.jpg" alt="自然风光作品 03" loading="lazy"><figcaption class="caption"><span>自然风光 03</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/nature/nature-04.jpg" alt="自然风光作品 04" loading="lazy"><figcaption class="caption"><span>自然风光 04</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/nature/nature-05.jpg" alt="自然风光作品 05" loading="lazy"><figcaption class="caption"><span>自然风光 05</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/nature/nature-06.jpg" alt="自然风光作品 06" loading="lazy"><figcaption class="caption"><span>自然风光 06</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card tall reveal"><img src="assets/nature/nature-07.jpg" alt="自然风光作品 07" loading="lazy"><figcaption class="caption"><span>自然风光 07</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/nature/nature-08.jpg" alt="自然风光作品 08" loading="lazy"><figcaption class="caption"><span>自然风光 08</span><span>Open</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="aerial" class="shell gallery-section">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Series 04</p>
+          <h2>航拍</h2>
+        </div>
+        <p class="section-copy">通过更高视角展开地形和城市纹理，让画面接近数据面板中的空间扫描结果。</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo-card wide reveal"><img src="assets/aerial/aerial-01.jpg" alt="航拍作品 01" loading="lazy"><figcaption class="caption"><span>航拍 01</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/aerial/aerial-02.jpg" alt="航拍作品 02" loading="lazy"><figcaption class="caption"><span>航拍 02</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/aerial/aerial-03.jpg" alt="航拍作品 03" loading="lazy"><figcaption class="caption"><span>航拍 03</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card square reveal"><img src="assets/aerial/aerial-04.jpg" alt="航拍作品 04" loading="lazy"><figcaption class="caption"><span>航拍 04</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/aerial/aerial-05.jpg" alt="航拍作品 05" loading="lazy"><figcaption class="caption"><span>航拍 05</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/aerial/aerial-06.jpg" alt="航拍作品 06" loading="lazy"><figcaption class="caption"><span>航拍 06</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/aerial/aerial-07.jpg" alt="航拍作品 07" loading="lazy"><figcaption class="caption"><span>航拍 07</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card reveal"><img src="assets/aerial/aerial-08.jpg" alt="航拍作品 08" loading="lazy"><figcaption class="caption"><span>航拍 08</span><span>Open</span></figcaption></figure>
+        <figure class="photo-card wide reveal"><img src="assets/aerial/aerial-09.jpg" alt="航拍作品 09" loading="lazy"><figcaption class="caption"><span>航拍 09</span><span>Open</span></figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <strong>刘雨新 Photography Portfolio</strong>
+      <span>Capturing the dialogue between cities, nature, and light.</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" aria-label="关闭预览">×</button>
+    <img alt="作品大图预览" />
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeLightbox = () => {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+    };
+
+    document.querySelectorAll(".photo-card img").forEach((image) => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox || event.target.tagName === "BUTTON") closeLightbox();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+  </script>
+</body>
+</html>
