@@ -534,21 +534,44 @@
     }
 
     .gallery {
-      columns: 2 500px;
-      column-gap: 28px;
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 2px 18px;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: rgba(107, 231, 255, .56) rgba(255, 255, 255, .08);
+      scrollbar-width: thin;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery::-webkit-scrollbar-track {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
     }
 
     .photo-card {
       position: relative;
-      display: inline-block;
-      width: 100%;
-      margin: 0 0 28px;
+      display: flex;
+      flex: 0 0 clamp(300px, 36vw, 460px);
+      flex-direction: column;
+      width: clamp(300px, 36vw, 460px);
+      margin: 0;
       border: 1px solid rgba(173, 215, 255, .14);
       overflow: hidden;
       cursor: zoom-in;
       transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
       background: rgba(255, 255, 255, .04);
-      break-inside: avoid;
+      scroll-snap-align: start;
       box-shadow: 0 20px 70px rgba(0, 0, 0, .22);
     }
 
@@ -560,9 +583,10 @@
 
     .photo-card img {
       width: 100%;
-      height: auto;
+      height: clamp(210px, 24vw, 300px);
       object-fit: contain;
       position: relative;
+      background: rgba(5, 8, 14, .78);
       transition: transform .55s ease, filter .3s ease;
     }
 
@@ -703,8 +727,12 @@
       .work-grid { grid-template-columns: repeat(2, 1fr); }
 
       .gallery {
-        columns: 2 360px;
-        column-gap: 18px;
+        gap: 14px;
+      }
+
+      .photo-card {
+        flex-basis: clamp(280px, 58vw, 390px);
+        width: clamp(280px, 58vw, 390px);
       }
     }
 
@@ -741,12 +769,17 @@
       .work-card { min-height: 300px; }
 
       .gallery {
-        columns: 1;
-        column-gap: 0;
+        gap: 12px;
+        padding-bottom: 14px;
       }
 
       .photo-card {
-        margin-bottom: 16px;
+        flex-basis: 84vw;
+        width: 84vw;
+      }
+
+      .photo-card img {
+        height: 230px;
       }
 
       .footer-inner {
