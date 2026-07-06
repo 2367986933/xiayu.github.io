@@ -306,7 +306,6 @@
     }
 
     .metric,
-    .terminal,
     .profile-card,
     .work-card,
     .photo-card {
@@ -337,17 +336,6 @@
       font-size: 12px;
       line-height: 1.45;
     }
-
-    .terminal {
-      padding: 15px;
-      color: #b8c7da;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .terminal strong { color: var(--cyan); font-weight: 600; }
-    .terminal em { color: #e6d9ff; font-style: normal; }
 
     section {
       padding: clamp(72px, 10vw, 128px) 0;
@@ -546,21 +534,22 @@
     }
 
     .gallery {
-      columns: 3 300px;
-      column-gap: 16px;
+      columns: 2 500px;
+      column-gap: 28px;
     }
 
     .photo-card {
       position: relative;
       display: inline-block;
       width: 100%;
-      margin: 0 0 16px;
+      margin: 0 0 28px;
       border: 1px solid rgba(173, 215, 255, .14);
       overflow: hidden;
       cursor: zoom-in;
       transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
       background: rgba(255, 255, 255, .04);
       break-inside: avoid;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .22);
     }
 
     .photo-card.wide,
@@ -714,7 +703,8 @@
       .work-grid { grid-template-columns: repeat(2, 1fr); }
 
       .gallery {
-        columns: 2 280px;
+        columns: 2 360px;
+        column-gap: 18px;
       }
     }
 
@@ -756,7 +746,7 @@
       }
 
       .photo-card {
-        margin-bottom: 12px;
+        margin-bottom: 16px;
       }
 
       .footer-inner {
@@ -812,11 +802,6 @@
             <div class="metric"><b>04</b><span>Visual Systems</span></div>
             <div class="metric"><b>AI</b><span>Visual Creator</span></div>
             <div class="metric"><b>VCG</b><span>视觉中国签约摄影师</span></div>
-          </div>
-          <div class="terminal">
-            <div><strong>&gt;</strong> scan.light_source()</div>
-            <div><strong>&gt;</strong> align(<em>city</em>, <em>nature</em>, <em>architecture</em>)</div>
-            <div><strong>&gt;</strong> render.portfolio("future-minimal")</div>
           </div>
         </aside>
       </div>
