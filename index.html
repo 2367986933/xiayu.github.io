@@ -560,10 +560,9 @@
 
     .photo-card img {
       width: 100%;
-      height: clamp(240px, 30vw, 390px);
+      height: auto;
       object-fit: contain;
       position: relative;
-      background: rgba(5, 8, 14, .72);
       transition: transform .55s ease, filter .3s ease;
     }
 
@@ -584,23 +583,23 @@
       width: clamp(430px, 52vw, 700px);
       margin: 0;
       break-inside: auto;
-      opacity: .36;
-      transform: scale(.66);
+      opacity: .52;
+      transform: scale(.84);
       transform-origin: center center;
-      transition: transform .42s cubic-bezier(.2, .8, .2, 1), opacity .42s ease, border-color .42s ease, box-shadow .42s ease;
+      transition: transform .55s cubic-bezier(.2, .8, .2, 1), opacity .55s ease, border-color .55s ease, box-shadow .55s ease;
       will-change: transform;
     }
 
     #gallery .photo-card.active {
       opacity: 1;
-      transform: scale(1.18);
+      transform: scale(1.08);
       border-color: rgba(107, 231, 255, .68);
       box-shadow: 0 30px 110px rgba(0, 0, 0, .42), 0 0 48px rgba(107, 231, 255, .18);
       z-index: 2;
     }
 
     #gallery .photo-card img {
-      height: clamp(330px, 38vw, 520px);
+      height: clamp(300px, 35vw, 470px);
       object-fit: contain;
       background: rgba(5, 8, 14, .78);
     }
@@ -797,10 +796,6 @@
         margin-bottom: 16px;
       }
 
-      .photo-card img {
-        height: auto;
-      }
-
       #gallery .gallery {
         padding: 22px 8vw 36px;
       }
@@ -808,15 +803,15 @@
       #gallery .photo-card {
         flex-basis: 82vw;
         width: 82vw;
-        transform: scale(.74);
+        transform: scale(.9);
       }
 
       #gallery .photo-card.active {
-        transform: scale(1.08);
+        transform: scale(1.03);
       }
 
       #gallery .photo-card img {
-        height: 280px;
+        height: 250px;
       }
 
       .footer-inner {
@@ -1084,10 +1079,10 @@
       };
 
       centerCityCard(cityIndex, "auto");
-      cityTimer = window.setInterval(nextCityCard, 1800);
+      cityTimer = window.setInterval(nextCityCard, 2600);
       cityGallery.addEventListener("mouseenter", () => window.clearInterval(cityTimer));
       cityGallery.addEventListener("mouseleave", () => {
-        cityTimer = window.setInterval(nextCityCard, 1800);
+        cityTimer = window.setInterval(nextCityCard, 2600);
       });
     }
 
