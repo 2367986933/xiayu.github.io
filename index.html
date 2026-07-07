@@ -569,17 +569,18 @@
     #gallery .gallery {
       display: flex;
       gap: 22px;
-      overflow: hidden;
-      padding: 34px max(0px, calc((100% - 900px) / 2)) 46px;
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: 34px 12vw 46px;
       columns: auto;
       scroll-behavior: smooth;
     }
 
     #gallery .photo-card {
       display: flex;
-      flex: 0 0 min(100%, 900px);
+      flex: 0 0 clamp(430px, 52vw, 700px);
       flex-direction: column;
-      width: min(100%, 900px);
+      width: clamp(430px, 52vw, 700px);
       margin: 0;
       border-color: rgba(210, 225, 245, .16);
       break-inside: auto;
@@ -602,17 +603,6 @@
       height: clamp(300px, 35vw, 470px);
       object-fit: contain;
       background: rgba(5, 8, 14, .78);
-    }
-
-    #aerial .gallery {
-      columns: 1 760px;
-      column-gap: 0;
-    }
-
-    #aerial .photo-card img {
-      height: clamp(360px, 46vw, 560px);
-      object-fit: contain;
-      background: rgba(5, 8, 14, .72);
     }
 
     .photo-card:hover img {
@@ -757,12 +747,12 @@
       }
 
       #gallery .gallery {
-        padding-inline: max(0px, calc((100% - 720px) / 2));
+        padding-inline: 8vw;
       }
 
       #gallery .photo-card {
-        flex-basis: min(100%, 720px);
-        width: min(100%, 720px);
+        flex-basis: clamp(330px, 68vw, 560px);
+        width: clamp(330px, 68vw, 560px);
       }
     }
 
@@ -808,12 +798,12 @@
       }
 
       #gallery .gallery {
-        padding: 22px 0 36px;
+        padding: 22px 8vw 36px;
       }
 
       #gallery .photo-card {
-        flex-basis: 100%;
-        width: 100%;
+        flex-basis: 82vw;
+        width: 82vw;
         transform: scale(.72);
       }
 
@@ -823,10 +813,6 @@
 
       #gallery .photo-card img {
         height: 250px;
-      }
-
-      #aerial .photo-card img {
-        height: 300px;
       }
 
       .footer-inner {
