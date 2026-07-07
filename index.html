@@ -583,8 +583,8 @@
       width: clamp(430px, 52vw, 700px);
       margin: 0;
       break-inside: auto;
-      opacity: .52;
-      transform: scale(.84);
+      opacity: .32;
+      transform: scale(.62);
       transform-origin: center center;
       transition: transform .55s cubic-bezier(.2, .8, .2, 1), opacity .55s ease, border-color .55s ease, box-shadow .55s ease;
       will-change: transform;
@@ -592,7 +592,7 @@
 
     #gallery .photo-card.active {
       opacity: 1;
-      transform: scale(1.08);
+      transform: scale(1.2);
       border-color: rgba(107, 231, 255, .68);
       box-shadow: 0 30px 110px rgba(0, 0, 0, .42), 0 0 48px rgba(107, 231, 255, .18);
       z-index: 2;
@@ -803,11 +803,11 @@
       #gallery .photo-card {
         flex-basis: 82vw;
         width: 82vw;
-        transform: scale(.9);
+        transform: scale(.72);
       }
 
       #gallery .photo-card.active {
-        transform: scale(1.03);
+        transform: scale(1.1);
       }
 
       #gallery .photo-card img {
@@ -1079,10 +1079,10 @@
       };
 
       centerCityCard(cityIndex, "auto");
-      cityTimer = window.setInterval(nextCityCard, 2600);
+      cityTimer = window.setInterval(nextCityCard, 1700);
       cityGallery.addEventListener("mouseenter", () => window.clearInterval(cityTimer));
       cityGallery.addEventListener("mouseleave", () => {
-        cityTimer = window.setInterval(nextCityCard, 2600);
+        cityTimer = window.setInterval(nextCityCard, 1700);
       });
     }
 
