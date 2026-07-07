@@ -582,6 +582,7 @@
       flex-direction: column;
       width: clamp(430px, 52vw, 700px);
       margin: 0;
+      border-color: rgba(210, 225, 245, .16);
       break-inside: auto;
       opacity: .32;
       transform: scale(.62);
@@ -593,8 +594,8 @@
     #gallery .photo-card.active {
       opacity: 1;
       transform: scale(1.2);
-      border-color: rgba(107, 231, 255, .68);
-      box-shadow: 0 30px 110px rgba(0, 0, 0, .42), 0 0 48px rgba(107, 231, 255, .18);
+      border-color: rgba(226, 236, 248, .3);
+      box-shadow: 0 34px 120px rgba(0, 0, 0, .46), 0 0 34px rgba(120, 164, 210, .1);
       z-index: 2;
     }
 
@@ -1080,10 +1081,6 @@
 
       centerCityCard(cityIndex, "auto");
       cityTimer = window.setInterval(nextCityCard, 1700);
-      cityGallery.addEventListener("mouseenter", () => window.clearInterval(cityTimer));
-      cityGallery.addEventListener("mouseleave", () => {
-        cityTimer = window.setInterval(nextCityCard, 1700);
-      });
     }
 
     const lightbox = document.querySelector("#lightbox");
